@@ -1,0 +1,24 @@
+{
+  "name": "nayanaa-backend",
+  "version": "1.0.0",
+  "description": "Nayanaa API — eyewear store + eye checkup booking",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "dev:mem": "node src/dev-mem.js",
+    "seed": "node src/seed/index.js",
+    "verify": "node src/verify.local.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.3.1",
+    "mongoose": "^8.6.0"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^11.2.0"
+  }
+}
