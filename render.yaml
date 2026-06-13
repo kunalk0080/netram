@@ -1,0 +1,20 @@
+# Render Blueprint — deploys the Nayanaa API.
+# Must live at the repo root for Render to auto-detect it.
+services:
+  - type: web
+    name: nayanaa-api
+    runtime: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: MONGO_URI
+        sync: false # set in the Render dashboard (MongoDB Atlas URI)
+      - key: CORS_ORIGIN
+        sync: false # your Firebase Hosting URL, e.g. https://nayanaa-app.web.app
+      - key: FIREBASE_SERVICE_ACCOUNT_JSON
+        sync: false # optional — paste service account JSON to verify real tokens
+      - key: PORT
+        value: 4000
