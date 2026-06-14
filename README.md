@@ -1,4 +1,4 @@
-# Nayanaa 👁️
+# Netram 👁️
 
 **Clear vision for every village.** A Lenskart-style eyewear store for rural India — free eye
 checkups, affordable glasses, and referrals to [Sri Sai Eye Hospital, Patna](https://srisaieyehospital.com/)
@@ -25,7 +25,7 @@ cd frontend && npm install && cp .env.example .env && npm run dev
 Open http://localhost:5173.
 
 - **Login** works in *demo mode*: any mobile number / OTP / email logs you in instantly.
-- **Coupons** to try: `NAYANAA10` (10% off), `FLAT200` (₹200 off ≥ ₹999), `GRAM50` (₹50 off).
+- **Coupons** to try: `NETRAM10` (10% off), `FLAT200` (₹200 off ≥ ₹999), `GRAM50` (₹50 off).
 - **Payments** are simulated: UPI/Card mark the order *paid*; COD places a *pending* order.
 
 ## Run with a real database

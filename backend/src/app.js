@@ -17,7 +17,7 @@ const origins = (process.env.CORS_ORIGIN || 'http://localhost:5173')
 app.use(cors({ origin: origins, credentials: true }));
 app.use(express.json());
 
-app.get('/api/health', (_req, res) => res.json({ ok: true, service: 'nayanaa-api' }));
+app.get('/api/health', (_req, res) => res.json({ ok: true, service: 'netram-api' }));
 
 app.use('/api/products', productRoutes);
 app.use('/api/coupons', couponRoutes);

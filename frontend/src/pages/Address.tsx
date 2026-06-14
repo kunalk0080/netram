@@ -40,7 +40,7 @@ export default function AddressPage() {
   }
 
   function selectAndContinue(addr: Address) {
-    sessionStorage.setItem('nayanaa_address', JSON.stringify(addr));
+    sessionStorage.setItem('netram_address', JSON.stringify(addr));
     navigate('/checkout');
   }
 

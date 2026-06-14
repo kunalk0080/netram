@@ -15,14 +15,14 @@ export default function Checkout() {
 
   const [address, setAddress] = useState<Address | null>(null);
   const [method, setMethod] = useState<Method>('upi');
-  const [coupon] = useState(() => sessionStorage.getItem('nayanaa_coupon') || '');
+  const [coupon] = useState(() => sessionStorage.getItem('netram_coupon') || '');
   const [discount, setDiscount] = useState(0);
   const [processing, setProcessing] = useState(false);
   const [error, setError] = useState('');
 
   // Resolve a delivery address (selected → default → redirect).
   useEffect(() => {
-    const stored = sessionStorage.getItem('nayanaa_address');
+    const stored = sessionStorage.getItem('netram_address');
     if (stored) {
       setAddress(JSON.parse(stored));
       return;
@@ -61,8 +61,8 @@ export default function Checkout() {
         couponCode: coupon || undefined,
       });
       clear();
-      sessionStorage.removeItem('nayanaa_coupon');
-      sessionStorage.removeItem('nayanaa_address');
+      sessionStorage.removeItem('netram_coupon');
+      sessionStorage.removeItem('netram_address');
       navigate(`/order/${order._id}`, { state: { order }, replace: true });
     } catch (err) {
       setError((err as Error).message);

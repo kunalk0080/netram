@@ -31,7 +31,7 @@ export default function Cart() {
 
   function checkout() {
     // Persist applied coupon for the checkout step.
-    sessionStorage.setItem('nayanaa_coupon', coupon ? coupon.code : '');
+    sessionStorage.setItem('netram_coupon', coupon ? coupon.code : '');
     navigate('/checkout');
   }
 
@@ -102,7 +102,7 @@ export default function Cart() {
             {coupon && <p className="mt-2 text-sm text-success">{t('cart.applied', { code: coupon.code })}</p>}
             {couponError && <p className="mt-2 text-sm text-red-500">{couponError}</p>}
             <div className="mt-3 flex flex-wrap gap-2 text-xs text-subtle">
-              <span className="rounded border border-dashed border-line px-2 py-1">NAYANAA10</span>
+              <span className="rounded border border-dashed border-line px-2 py-1">NETRAM10</span>
               <span className="rounded border border-dashed border-line px-2 py-1">FLAT200</span>
               <span className="rounded border border-dashed border-line px-2 py-1">GRAM50</span>
             </div>

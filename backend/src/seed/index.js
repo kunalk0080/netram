@@ -5,13 +5,13 @@ import Coupon from '../models/Coupon.js';
 import { products } from './products.data.js';
 
 const coupons = [
-  { code: 'NAYANAA10', type: 'percent', value: 10, minOrder: 0, description: '10% off your order' },
+  { code: 'NETRAM10', type: 'percent', value: 10, minOrder: 0, description: '10% off your order' },
   { code: 'FLAT200', type: 'flat', value: 200, minOrder: 999, description: '₹200 off on orders above ₹999' },
   { code: 'GRAM50', type: 'flat', value: 50, minOrder: 0, description: '₹50 off — village welcome offer' },
 ];
 
 async function run() {
-  const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/nayanaa';
+  const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/netram';
   await mongoose.connect(MONGO_URI);
   console.log('[seed] Connected to MongoDB');
 

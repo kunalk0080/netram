@@ -27,7 +27,7 @@ async function main() {
   // Seed
   await Product.insertMany(products);
   await Coupon.insertMany([
-    { code: 'NAYANAA10', type: 'percent', value: 10, minOrder: 0 },
+    { code: 'NETRAM10', type: 'percent', value: 10, minOrder: 0 },
     { code: 'FLAT200', type: 'flat', value: 200, minOrder: 999 },
   ]);
 
@@ -36,7 +36,7 @@ async function main() {
   const base = `http://localhost:${server.address().port}`;
   const j = (r) => r.json();
 
-  console.log('\nNayanaa API verification\n');
+  console.log('\nNetram API verification\n');
 
   // Health
   const health = await fetch(`${base}/api/health`).then(j);
@@ -61,9 +61,9 @@ async function main() {
   // Coupon validate
   const coupon = await fetch(`${base}/api/coupons/validate`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ code: 'NAYANAA10', subtotal: 1000 }),
+    body: JSON.stringify({ code: 'NETRAM10', subtotal: 1000 }),
   }).then(j);
-  check('coupon NAYANAA10 gives 10% (100 off 1000)', coupon.valid && coupon.discount === 100);
+  check('coupon NETRAM10 gives 10% (100 off 1000)', coupon.valid && coupon.discount === 100);
 
   const badCoupon = await fetch(`${base}/api/coupons/validate`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -106,7 +106,7 @@ async function main() {
       items: [{ productId: list[0]._id, qty: 2 }],
       address: addr[0],
       paymentMethod: 'upi',
-      couponCode: 'NAYANAA10',
+      couponCode: 'NETRAM10',
     }),
   }).then(j);
   const expectedSubtotal = list[0].price * 2;

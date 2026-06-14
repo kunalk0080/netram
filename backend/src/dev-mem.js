@@ -15,14 +15,14 @@ console.log('[dev-mem] In-memory MongoDB started');
 
 await Product.insertMany(products);
 await Coupon.insertMany([
-  { code: 'NAYANAA10', type: 'percent', value: 10, minOrder: 0, description: '10% off your order' },
+  { code: 'NETRAM10', type: 'percent', value: 10, minOrder: 0, description: '10% off your order' },
   { code: 'FLAT200', type: 'flat', value: 200, minOrder: 999, description: '₹200 off above ₹999' },
   { code: 'GRAM50', type: 'flat', value: 50, minOrder: 0, description: '₹50 village welcome offer' },
 ]);
 console.log(`[dev-mem] Seeded ${products.length} products + 3 coupons`);
 
 const { default: app } = await import('./app.js');
-app.listen(PORT, () => console.log(`[dev-mem] Nayanaa API on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`[dev-mem] Netram API on http://localhost:${PORT}`));
 
 const stop = async () => { await mongoose.disconnect(); await mongod.stop(); process.exit(0); };
 process.on('SIGINT', stop);

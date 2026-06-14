@@ -1,7 +1,7 @@
 {
-  "name": "nayanaa-backend",
+  "name": "netram-backend",
   "version": "1.0.0",
-  "description": "Nayanaa API — eyewear store + eye checkup booking",
+  "description": "Netram API — eyewear store + eye checkup booking",
   "type": "module",
   "main": "src/server.js",
   "scripts": {

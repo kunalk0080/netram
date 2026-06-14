@@ -1,5 +1,5 @@
 {
-  "brand": "Nayanaa",
+  "brand": "Netram",
   "nav": {
     "home": "Home",
     "shop": "Eyewear",
@@ -103,7 +103,7 @@
     "availableOffers": "Available offers"
   },
   "auth": {
-    "title": "Log in to Nayanaa",
+    "title": "Log in to Netram",
     "subtitle": "Continue with your mobile number or email.",
     "tabMobile": "Mobile",
     "tabEmail": "Email",
@@ -192,7 +192,7 @@
   "referral": {
     "title": "Expert Care at Sri Sai Eye Hospital",
     "subtitle": "When a condition needs more than glasses, we connect you with trusted specialists in Patna.",
-    "intro": "Nayanaa handles eye tests and eyewear. For serious conditions — cataract, glaucoma, retinal problems, or surgery — we refer you to our partner hospital with experienced doctors and modern facilities.",
+    "intro": "Netram handles eye tests and eyewear. For serious conditions — cataract, glaucoma, retinal problems, or surgery — we refer you to our partner hospital with experienced doctors and modern facilities.",
     "services": "What they treat",
     "service1": "Cataract surgery",
     "service2": "Glaucoma management",
@@ -200,7 +200,7 @@
     "service4": "Paediatric eye care",
     "visit": "Visit Hospital Website",
     "howTitle": "How referral works",
-    "step1": "Get a free eye checkup at a Nayanaa camp.",
+    "step1": "Get a free eye checkup at a Netram camp.",
     "step2": "If a serious condition is found, our team explains it to you.",
     "step3": "We refer you to Sri Sai Eye Hospital with your details.",
     "step4": "The hospital team takes over your treatment and follow-up."
@@ -217,7 +217,7 @@
     "shop": "Shop",
     "care": "Eye Care",
     "company": "Company",
-    "rights": "Nayanaa. A community vision initiative.",
+    "rights": "Netram. A community vision initiative.",
     "hospital": "Partner Hospital"
   }
 }
