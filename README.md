@@ -52,16 +52,12 @@ cd frontend && npm run build    # strict type-check + production bundle
 
 ## Deploy
 
-**Frontend → Firebase Hosting**
-```bash
-cd frontend && npm run build
-firebase deploy --only hosting        # uses firebase.json (public: dist, SPA rewrite)
-```
-Set `VITE_API_URL` to the deployed Render URL before building.
+**One service does everything.** The Express backend serves the built React app, so a single
+Render Blueprint (`render.yaml`) hosts both the site and the API — with **no env vars required**:
+no `MONGO_URI` → ephemeral in-memory DB (auto-seeded); no Firebase → demo auth.
 
-**Backend → Render**
-Push the repo and create a Render web service from `backend/render.yaml`. Set env vars
-`MONGO_URI` (Atlas), `CORS_ORIGIN` (your Firebase URL), and optionally `FIREBASE_SERVICE_ACCOUNT_JSON`.
+Render → New → **Blueprint** → connect the repo → Apply. Add `MONGO_URI` (Atlas) and Firebase keys
+later for persistence + real login. Full guide: **[DEPLOYMENT.md](DEPLOYMENT.md)**.
 
 ## Project structure
 ```

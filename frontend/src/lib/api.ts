@@ -1,6 +1,9 @@
 import type { Address, CouponResult, Order, Product } from './types';
 
-const BASE = import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
+// In production the API is served from the same origin (single deployment), so
+// default to a relative '/api'. In local dev (two servers) hit the backend port.
+const BASE =
+  import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:4000/api' : '/api');
 const TOKEN_KEY = 'netram_token';
 
 export function setToken(token: string | null) {

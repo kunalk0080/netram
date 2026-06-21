@@ -1,20 +1,24 @@
-# Render Blueprint — deploys the Netram API.
-# Must live at the repo root for Render to auto-detect it.
+# Render Blueprint — single service that builds the React frontend and serves it
+# from the Express API. Must live at the repo root for Render to auto-detect it.
+#
+# Runs with ZERO setup: with no MONGO_URI, the server uses an ephemeral in-memory
+# database (data resets on restart). Add MONGO_URI later for real persistence.
 services:
   - type: web
-    name: netram-api
+    name: netram
     runtime: node
-    rootDir: backend
     plan: free
-    buildCommand: npm install
-    startCommand: npm start
+    buildCommand: cd frontend && npm install && npm run build && cd ../backend && npm install
+    startCommand: node backend/src/server.js
     healthCheckPath: /api/health
     envVars:
+      - key: NODE_VERSION
+        value: "20"
+      # Optional — leave unset to use the in-memory DB. Set to a MongoDB Atlas
+      # URI later for persistent data.
       - key: MONGO_URI
-        sync: false # set in the Render dashboard (MongoDB Atlas URI)
-      - key: CORS_ORIGIN
-        sync: false # your Firebase Hosting URL, e.g. https://netram-app.web.app
+        sync: false
+      # Optional — paste Firebase service-account JSON later to verify real
+      # login tokens. Unset = built-in demo auth (any number/email logs in).
       - key: FIREBASE_SERVICE_ACCOUNT_JSON
-        sync: false # optional — paste service account JSON to verify real tokens
-      - key: PORT
-        value: 4000
+        sync: false
